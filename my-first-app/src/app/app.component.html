@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Hello Sowmya!!</h3>
+      <hr />
+      <h2>I'am in the App Component</h2>
+      <input type="text" [value]="sowmya" [(ngModel)]="name" />
+      <p>{{ name }}</p>
+      <app-servers></app-servers>
+      <!-- for normal selector -->
+      <!-- <div app-servers></div> -->
+      <!-- For selector as an attribute -->
+      <!-- <div class="app-servers"></div>--- For selector as a class -->
+      <app-warning></app-warning>
+      <br />
+      <app-success></app-success>
+    </div>
+  </div>
+</div>

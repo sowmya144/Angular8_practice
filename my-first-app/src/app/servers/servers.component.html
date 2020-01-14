@@ -1,0 +1,28 @@
+<p>servers works!</p>
+<h3>Enter Server Name</h3>
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<br />
+<input type="text" class="form-control" [(ngModel)]="serverNameEntered" />
+<p>{{ serverNameEntered }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  AddServer
+</button>
+<!-- Property binding -->
+<!-- <p>{{ allowNewServer }}</p> -->
+<!-- string interpolation -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!--
+  above string interpolation can be done using
+  property binding as shown using innertext property
+-->
+<!-- <p>{{ serverStatus }}</p> -->
+<p *ngIf="serverCreated; else: noserver">
+  Server was created whose name is {{ serverNameEntered }}
+</p>
+<ng-template #noserver> No server was created</ng-template>
+<app-server *ngFor="let server of serversarray"></app-server>
